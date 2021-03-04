@@ -55,7 +55,7 @@ class ColorSet extends DataObject{
 
 	public function onAfterWrite(){
 		parent::onAfterWrite();
-		// Alle Set einsammeln um das    Stylesheet-File zu aktualisieren
+		// Alle Set einsammeln um das Stylesheet-File zu aktualisieren
 		/*$colorSets=ColorSet::get();
 		$set="    ";
 		foreach($colorSets as $cs){
