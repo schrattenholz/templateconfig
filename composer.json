@@ -1,0 +1,18 @@
+{
+    "name": "schrattenholz/templateconfig",
+    "description": "layout-configuration",
+    "type": "silverstripe-vendormodule",
+    "keywords": ["silverstripe", "layout"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Fabian Schrattenholz",
+            "email": "fabian@schrattenholz.de"
+        }
+    ],
+	"extra": {
+		"expose": [
+		]
+	}
+	
+}
