@@ -56,13 +56,13 @@ class ColorSet extends DataObject{
 	public function onAfterWrite(){
 		parent::onAfterWrite();
 		// Alle Set einsammeln um das Stylesheet-File zu aktualisieren
-		/*$colorSets=ColorSet::get();
+		$colorSets=ColorSet::get();
 		$set="    ";
 		foreach($colorSets as $cs){
 				$set.=$cs->generateCSS();
 		}
-		$file=BASE_PATH."/public/resources/vendor/schrattenholz/templateconfig/css/colorsets.css";
-		file_put_contents($file,$set);*/
+		$file=BASE_PATH."/public/_resources/vendor/schrattenholz/templateconfig/css/colorsets.css";
+		file_put_contents($file,$set);
 	}
 	public function generateCSS(){
 		//Stylesheet generieren
