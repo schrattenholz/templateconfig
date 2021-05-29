@@ -16,6 +16,7 @@ class TemplateConfigExtension extends Extension {
 		//Funktioniert nicht wird direkt im template eingebunden
 		//Requirements::css("schrattenholz/order:javascript/order.js",$vars);
 		//Requirements::css("schrattenholz/templateconfig/css/colorsets.css");
+		$vars=false;
 		Requirements::javascriptTemplate("schrattenholz/templateconfig:css/colorsets.css",$vars);
 		
 	}
