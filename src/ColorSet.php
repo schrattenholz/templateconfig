@@ -18,6 +18,9 @@ use SilverStripe\Assets\Image;
 use TractorCow\Colorpicker\Color;
 use TractorCow\Colorpicker\Forms\ColorField;
 use SilverStripe\Security\Permission;
+use SilverStripe\ORM\ValidationException;
+use Psr\Log\LoggerInterface;
+use SilverStripe\Core\Injector\Injector;
 class ColorSet extends DataObject{
 	private static $table_name="colorset";
 	private static $db=[
@@ -61,6 +64,7 @@ class ColorSet extends DataObject{
 		foreach($colorSets as $cs){
 				$set.=$cs->generateCSS();
 		}
+		Injector::inst()->get(LoggerInterface::class)->error('ColorSep.php onAfterWrite PATH='.BASE_PATH);
 		$file=BASE_PATH."/public/_resources/vendor/schrattenholz/templateconfig/css/colorsets.css";
 		file_put_contents($file,$set);
 	}
