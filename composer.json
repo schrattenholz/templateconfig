@@ -12,6 +12,7 @@
     ],
 	"extra": {
 		"expose": [
+		"css"
 		]
 	}
 	
