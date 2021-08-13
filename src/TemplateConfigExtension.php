@@ -12,7 +12,7 @@ class TemplateConfigExtension extends Extension {
 		return "TemplateConfigExtensionTest";
 	}
 	public function onAfterInit () {
-		Requirements::css("public/_resources/vendor/schrattenholz/templateconfig/css/colorsets.css");
+		//Requirements::css("public/_resources/vendor/schrattenholz/templateconfig/css/colorsets.css");
 		/* 
 		//Funktioniert nicht wird direkt im template eingebunden
 		Requirements::css("public/resources/vendor/schrattenholz/templateconfig/css/colorsets.css");
