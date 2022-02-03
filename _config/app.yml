@@ -1,6 +1,7 @@
 SilverStripe\CMS\Model\SiteTree:
   extensions:
     - Schrattenholz\TemplateConfig\TemplateConfigExtension
+    - Schrattenholz\TemplateConfig\TemplateConfig_SiteTreeExtension
 SilverStripe\CMS\Controllers\ContentController:
   extensions:
     - Schrattenholz\TemplateConfig\TemplateConfigExtension
