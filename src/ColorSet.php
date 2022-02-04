@@ -78,7 +78,7 @@ class ColorSet extends DataObject{
 		}
 		$css.='color:#'.$this->FontColor.' !important;';
 		$css.='} ';
-		$css.=".colorSet".$this->ID." h1,.colorSet".$this->ID." h2,.colorSet".$this->ID." h3,.colorSet".$this->ID." h4{";
+		$css.=".colorSet".$this->ID." h1,.colorSet".$this->ID." h2,.colorSet".$this->ID." h3,.colorSet".$this->ID." h4,.colorSet".$this->ID." h5,.colorSet".$this->ID." h6{";
 		if($this->HColor){
 			$css.='color:#'.$this->HColor.' !important;';
 		}else{
