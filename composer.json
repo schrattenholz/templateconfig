@@ -10,14 +10,14 @@
             "email": "fabian@schrattenholz.de"
         }
     ],
+    "require": {
+        "silverstripe/framework": "~4",
+        "schrattenholz/templateconfig":"dev-master"
+    },
 	"extra": {
 		"expose": [
 		"css"
 		]
-	},
-    "require": {
-		"silverstripe/framework": "~4",
-        "tractorcow/silverstripe-colorpicker ": "~4"
-    }
+	}
 	
 }
