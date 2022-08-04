@@ -85,6 +85,7 @@ class ColorSet extends DataObject{
 			$css.='color:#'.$this->FontColor.' !important;';
 		}
 		$css.='} ';
+		$css.='a{color:#'.$this->FontColor.' !important;}';
 		return $css;
 	}
 	 public function canView($member = null) 
