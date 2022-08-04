@@ -64,7 +64,7 @@ class ColorSet extends DataObject{
 		foreach($colorSets as $cs){
 				$set.=$cs->generateCSS();
 		}
-		Injector::inst()->get(LoggerInterface::class)->error('ColorSep.php onAfterWrite PATH='.BASE_PATH);
+		//Injector::inst()->get(LoggerInterface::class)->error('ColorSep.php onAfterWrite PATH='.BASE_PATH);
 		$file=BASE_PATH."/public/_resources/vendor/schrattenholz/templateconfig/css/colorsets.css";
 		file_put_contents($file,$set);
 	}
@@ -85,7 +85,7 @@ class ColorSet extends DataObject{
 			$css.='color:#'.$this->FontColor.' !important;';
 		}
 		$css.='} ';
-		$css.='a{color:#'.$this->FontColor.' !important;}';
+		$css.='.colorSet'.$this->ID.' a, .colorSet'.$this->ID.' a:visited, .colorSet'.$this->ID.' a:hover, .colorSet'.$this->ID.' a:focus, .colorSet'.$this->ID.' a:active{color:#'.$this->FontColor.' !important;}';
 		return $css;
 	}
 	 public function canView($member = null) 
