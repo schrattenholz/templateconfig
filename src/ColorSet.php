@@ -85,7 +85,7 @@ class ColorSet extends DataObject{
 			$css.='color:#'.$this->FontColor.' !important;';
 		}
 		$css.='} ';
-		$css.='.colorSet'.$this->ID.' a, .colorSet'.$this->ID.' a:visited, .colorSet'.$this->ID.' a:hover, .colorSet'.$this->ID.' a:focus, .colorSet'.$this->ID.' a:active{color:#'.$this->FontColor.' !important;}';
+		$css.='.colorSet'.$this->ID.' a, .colorSet'.$this->ID.' .userform label, .colorSet'.$this->ID.' a:visited, .colorSet'.$this->ID.' a:hover, .colorSet'.$this->ID.' a:focus, .colorSet'.$this->ID.' a:active{color:#'.$this->FontColor.' !important;}';
 		return $css;
 	}
 	 public function canView($member = null) 
