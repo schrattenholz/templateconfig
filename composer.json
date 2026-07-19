@@ -11,8 +11,8 @@
         }
     ],
     "require": {
-        "silverstripe/framework": ">=4",
-        "tractorcow/silverstripe-colorpicker":"4.2.1"
+        "silverstripe/framework": "^6.0",
+        "tractorcow/silverstripe-colorpicker":"^4.0"
     },
 	"extra": {
 		"expose": [
