@@ -2,11 +2,11 @@
 
 namespace Schrattenholz\TemplateConfig;
 
-use Silverstripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 use SilverStripe\View\Requirements;
-use Silverstripe\Forms\FieldList;
-use Silverstripe\Forms\DropdownField;
-class TemplateConfig_SiteTreeExtension extends DataExtension {
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\DropdownField;
+class TemplateConfig_SiteTreeExtension extends Extension {
 	private static $has_one=[
 		"ColorSet"=>ColorSet::class
 	];
