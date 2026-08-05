@@ -24,10 +24,10 @@ class TemplateConfig_SiteTreeExtension extends Extension {
 		return "TemplateConfigExtensionTest";
 	}
 	public function onAfterInit () {
-		Requirements::css("public/_resources/vendor/schrattenholz/templateconfig/css/colorsets.css");
-		/* 
-		//Funktioniert nicht wird direkt im template eingebunden
-		Requirements::css("public/resources/vendor/schrattenholz/templateconfig/css/colorsets.css");
-		*/
+		// Wird erst beim ersten Speichern eines ColorSets erzeugt -- vorher nicht
+		// einbinden, sonst laeuft jede Seite in einen 404.
+		if(file_exists(BASE_PATH."/".ColorSet::STYLESHEET_PATH)){
+			Requirements::css(ColorSet::STYLESHEET_PATH);
+		}
 	}
 }

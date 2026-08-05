@@ -56,17 +56,39 @@ class ColorSet extends DataObject{
 		);
 	}
 
+	/**
+	 * Pfad des generierten Stylesheets, relativ zum Projekt-Root.
+	 *
+	 * Liegt bewusst unter public/assets/ und nicht mehr im Composer-Ordner
+	 * (public/_resources/vendor/...): dorthin darf der Webserver-Benutzer nicht
+	 * schreiben (Composer legt alles als root an), und jedes composer install
+	 * wuerde die im CMS eingestellten Farben ueberschreiben.
+	 */
+	const STYLESHEET_PATH='public/assets/colorsets.css';
+
 	public function onAfterWrite(){
 		parent::onAfterWrite();
-		// Alle Set einsammeln um das Stylesheet-File zu aktualisieren
-		$colorSets=ColorSet::get();
+		ColorSet::writeStylesheet();
+	}
+	public function onAfterDelete(){
+		parent::onAfterDelete();
+		ColorSet::writeStylesheet();
+	}
+	/**
+	 * Alle Sets einsammeln um das Stylesheet-File zu aktualisieren.
+	 */
+	public static function writeStylesheet(){
 		$set="    ";
-		foreach($colorSets as $cs){
+		foreach(ColorSet::get() as $cs){
 				$set.=$cs->generateCSS();
 		}
-		//Injector::inst()->get(LoggerInterface::class)->error('ColorSep.php onAfterWrite PATH='.BASE_PATH);
-		$file=BASE_PATH."/public/_resources/vendor/schrattenholz/templateconfig/css/colorsets.css";
+		$file=BASE_PATH."/".ColorSet::STYLESHEET_PATH;
 		file_put_contents($file,$set);
+		// Die Datei wird mal vom Webserver-Benutzer (Speichern im CMS), mal von
+		// root (dev/build, Deploy-Skripte) geschrieben. Ohne das chmod sperrt der
+		// jeweils andere sich selbst aus -- genau das war der urspruengliche
+		// "Failed to open stream: Permission denied" im CMS.
+		@chmod($file,0666);
 	}
 	public function generateCSS(){
 		//Stylesheet generieren
